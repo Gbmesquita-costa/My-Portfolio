@@ -8,8 +8,8 @@
 
 # page
 
-/src/app/seed/*
 /src/actions/seedProjects/*
+/src/app/seed/*
 
 # testing
 /coverage
