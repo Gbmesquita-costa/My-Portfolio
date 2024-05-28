@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { Particles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-export function ParticlesContainer(): JSX.Element {
+export const ParticlesContainer = (): JSX.Element => {
     const particlesInit = useCallback(async (engine: any) => {
         await loadFull(engine)
     }, [])

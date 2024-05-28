@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+
 import Stripe from "stripe";
+import { stripe } from "@/services/stripe";
 
 import prisma from "@/services/database"
+import { revalidate } from "@/actions/revalidateTag";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-    apiVersion: "2023-10-16"
-})
-
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest): Promise<NextResponse>{
     const signature = req.headers.get("stripe-signature")
 
     if (!signature) {
@@ -26,7 +25,7 @@ export async function POST(req: NextRequest) {
             process.env.STRIPE_WEBHOOK_SECRET as string
         )
     } catch (error: any | undefined) {
-        console.log(`⚠️  Webhook signature verification failed.`, error.message)
+        // console.log(`⚠️  Webhook signature verification failed.`, error.message)
         return NextResponse.json({ message: error.message }, {
             status: 400
         })
@@ -40,17 +39,19 @@ export async function POST(req: NextRequest) {
 
     const metadata = event.data.object.metadata as any
 
-    const amount = (event.data.object as { 
-        amount_total: number 
-    }).amount_total / 100 
+    const amount = (event.data.object as {
+        amount_total: number
+    }).amount_total / 100
 
-    await prisma.donations.create({
+    prisma.donations.create({
         data: {
             message: metadata.message,
             name: metadata.name,
             amount: amount
         }
     })
+
+    await revalidate("recent_donations")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200

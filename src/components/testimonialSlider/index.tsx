@@ -9,10 +9,10 @@ import { Pagination, Navigation } from "swiper/modules";
 import { FaQuoteLeft } from "react-icons/fa";
 
 import "swiper/css";
-import "swiper/css/navigation"
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export function TestimonialSlider(): JSX.Element {
+export const TestimonialSlider = (): JSX.Element => {
     const testimonialData = [
         {
             image: '/t-avt-1.png',

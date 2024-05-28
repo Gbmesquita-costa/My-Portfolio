@@ -8,20 +8,25 @@ import { Avatar } from "@/components/avatar";
 import { ParticlesContainer } from "@/components/particles";
 import { fadeIn } from "@/components/variants";
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
   return (
     <div className="flex bg-primary/30 min-h-screen w-full flex-col 
-    items-center justify-center py-40 xl:py-20">
+    items-center justify-center py-40 xl:py-20"
+    >
       <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left
         h-full container mx-auto">
         <motion.h1
           variants={fadeIn("down", 0.2)}
           initial="hidden"
           animate="show"
-          className="text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold"
+          className="text-[35px] leading-tight md:text-[60px] 
+          md:leading-[1.3] mb-8 font-semibold"
         >
-          Transforming Ideas <br /> Into {" "}
-          <span className="text-accent">Digital Reality</span>
+          Crafting Innovative <br /> {" "}
+
+          <span className="text-accent">
+            Solutions
+          </span>
         </motion.h1>
 
         <motion.p
@@ -30,9 +35,9 @@ export default function Home(): JSX.Element {
           animate="show"
           className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
         >
-          It has survived not only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages.
+          I&apos;m a Full Stack developer with expertise in Website and Software development.
+          Passionate about crafting digital solutions that elevate user experience and drive business success.
+          Let&apos;s collaborate to turn your digital ideas into reality!
         </motion.p>
 
         <div className="flex justify-center xl:hidden relative z-10">
@@ -72,7 +77,8 @@ export default function Home(): JSX.Element {
             duration: 1,
             ease: "easeInOut"
           }}
-          className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+          className="w-full h-full max-w-[737px] max-h-[678px] 
+          absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
         >
           <Avatar />
         </motion.div>
@@ -80,3 +86,5 @@ export default function Home(): JSX.Element {
     </div>
   )
 }
+
+export default Home

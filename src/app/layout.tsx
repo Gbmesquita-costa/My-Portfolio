@@ -12,8 +12,19 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "My Portfolio | Gabriel Mesquita da Costa",
-  description: "My Portfolio | Gabriel Mesquita da Costa"
+  metadataBase: new URL("http://localhost:3000"),
+  title: {
+    default: "My Portfolio | Gabriel Mesquita da Costa",
+    template: "My Portfolio | %s"
+  },
+  description: "My Portfolio | Gabriel Mesquita da Costa",
+  twitter: {
+    card: "summary_large_image"
+  },
+  robots: {
+    index: true,
+    follow: true
+  }
 }
 
 export default function RootLayout({
@@ -27,9 +38,9 @@ export default function RootLayout({
         <TransitionProvider>
           <main className="relative w-full h-screen xl:overflow-hidden text-white overflow-y-auto">
             <TopLeftImage />
-            <NavBar />
             <Header />
             {children}
+            <NavBar />
           </main>
         </TransitionProvider>
       </body>

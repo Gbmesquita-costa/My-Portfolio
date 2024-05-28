@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export function PageTransition(): JSX.Element {
+export const PageTransition = (): JSX.Element => {
   const transitionVariants = {
     initial: {
       x: "100%",

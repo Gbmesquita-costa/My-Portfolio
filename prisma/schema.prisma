@@ -8,13 +8,28 @@ datasource db {
 }
 
 model Donations {
-  id         String   @id @default(uuid())
-  name       String
-  message    String
-  amount     Int
-  
+  id      String @id @default(uuid())
+  name    String @db.VarChar(17)
+  message String @db.VarChar(100)
+  amount  Int
+
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt()
 
   @@map("donations")
+}
+
+model ProjectDetails {
+  id           String  @id @default(uuid())
+  name         String  @unique
+  description  String  @db.Text
+  gifimage_url String
+  githubRepo   String?
+  deployUrl    String?
+  thumbnail    String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt()
+
+  @@map("projectdetails")
 }

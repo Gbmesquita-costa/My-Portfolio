@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { HiArrowRight } from "react-icons/hi2";
 
-export function ActionButton(): JSX.Element {
+export const ActionButton = (): JSX.Element => {
   return (
     <div className="mx-auto xl:mx-0">
       <Link href="/work" className="relative w-[185px] h-[185px] flex justify-center items-center

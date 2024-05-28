@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/variants";
 
-import { 
-    BsArrowLeft, 
-    BsArrowRight 
+import {
+    BsArrowLeft,
+    BsArrowRight
 } from "react-icons/bs";
 
-export default function ThankYou(): JSX.Element {
+const ThankYou = (): JSX.Element => {
     const router = useRouter()
 
     return (
@@ -34,7 +34,7 @@ export default function ThankYou(): JSX.Element {
                 <button className="h-[52px] rounded-full border border-white/50 max-w-[260px]
                 px-8 transition-all duration-300 flex items-center justify-center
                 overflow-hidden hover:border-accent group"
-                onClick={() => router.push("/")}
+                    onClick={() => router.push("/")}
                 >
                     <span className="group-hover:-translate-y-[120%] group-hover:opacity-0
                     transition-all duration-500">
@@ -52,7 +52,7 @@ export default function ThankYou(): JSX.Element {
                 <button className="h-[52px] rounded-full border border-white/50 max-w-[260px]
                 px-8 transition-all duration-300 flex items-center justify-center
                 overflow-hidden hover:border-accent group"
-                onClick={() => router.push("/coffee")}
+                    onClick={() => router.push("/coffee")}
                 >
                     <span className="group-hover:-translate-y-[120%] group-hover:opacity-0
                     transition-all duration-500">
@@ -66,3 +66,5 @@ export default function ThankYou(): JSX.Element {
         </div>
     )
 }
+
+export default ThankYou

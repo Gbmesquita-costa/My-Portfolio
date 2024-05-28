@@ -6,6 +6,11 @@
 .pnp.js
 .yarn/install-state.gz
 
+# page
+
+/app/seed/*
+/src/actions/seedProjects/*
+
 # testing
 /coverage
 
@@ -27,6 +32,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
