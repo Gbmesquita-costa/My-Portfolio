@@ -33,3 +33,16 @@ model ProjectDetails {
 
   @@map("projectdetails")
 }
+
+model Testemonials {
+  id           String @id @default(uuid())
+  name         String
+  description  String @db.VarChar(145)
+  client_image String
+  position     String @default("customer")
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt()
+
+  @@map("testemonials")
+}

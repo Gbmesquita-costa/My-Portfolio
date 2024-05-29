@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const About = (): JSX.Element => {
   return (
     <div className="flex bg-primary/30 min-h-screen w-full flex-col items-center 
-    justify-center pt-56 pb-14 xl:py-20 text-center xl:text-left">
+    justify-center py-40 xl:py-20 text-center xl:text-left">
       <Circles />
       <MotionAvatar />
 

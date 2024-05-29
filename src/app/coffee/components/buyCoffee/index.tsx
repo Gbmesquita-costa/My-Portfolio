@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
+import { Button } from "@/components/ui/button";
+
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/variants";
 
@@ -94,7 +96,7 @@ export const BuyCoffee = (): JSX.Element => {
 
                 {
                     presets.map((preset) => (
-                        <button
+                        <Button
                             key={preset}
                             onClick={() => setQuantity(preset.toString())}
                             className="bg-[rgba(65,47,123,0.55)] text-white px-4 py-2 
@@ -102,7 +104,7 @@ export const BuyCoffee = (): JSX.Element => {
                             disabled={checkoutIsLoading}
                         >
                             {preset}
-                        </button>
+                        </Button>
                     ))
                 }
 

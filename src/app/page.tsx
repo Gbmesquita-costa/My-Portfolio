@@ -10,11 +10,13 @@ import { fadeIn } from "@/components/variants";
 
 const Home = (): JSX.Element => {
   return (
-    <div className="flex bg-primary/30 min-h-screen w-full flex-col 
-    items-center justify-center py-40 xl:py-20"
+    <div className="flex bg-primary/30 min-h-screen 
+      w-full flex-col items-center justify-center 
+      py-40 xl:py-20"
     >
-      <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left
-        h-full container mx-auto">
+      <div className="text-center flex flex-col justify-center 
+        xl:pt-40 xl:text-left h-full container mx-auto z-50"
+      >
         <motion.h1
           variants={fadeIn("down", 0.2)}
           initial="hidden"
@@ -53,7 +55,8 @@ const Home = (): JSX.Element => {
           <ActionButton />
         </motion.div>
       </div>
-      <div className="w-[1200px] h-full absolute right-0 bottom-0 overflow-hidden">
+      <div className="w-[1200px] h-full absolute 
+      right-0 bottom-0 overflow-hidden">
         <motion.div
           variants={fadeIn("up", 0.5)}
           initial="hidden"
@@ -77,8 +80,8 @@ const Home = (): JSX.Element => {
             duration: 1,
             ease: "easeInOut"
           }}
-          className="w-full h-full max-w-[737px] max-h-[678px] 
-          absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+          className="w-full h-full max-w-[930px] max-h-[690px] 
+          absolute -bottom-32 lg:-bottom-10 lg:right-[8%]"
         >
           <Avatar />
         </motion.div>

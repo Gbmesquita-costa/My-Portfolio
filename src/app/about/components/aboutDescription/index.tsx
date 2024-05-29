@@ -7,12 +7,15 @@ import { fadeIn } from "@/components/variants";
 
 export const AboutDescription = (): JSX.Element => {
     return (
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex flex-col 
+            justify-center flex-1"
+        >
             <motion.h2
                 variants={fadeIn("right", 0.2)}
                 initial="hidden"
                 animate="show"
-                className="text-[35px] leading-tight md:text-[48px] md:leading-[1.3] mb-7 font-semibold"
+                className="text-[35px] leading-tight md:text-[48px] 
+                md:leading-[1.3] mb-8 font-semibold"
             >
                 Shaping <span className="text-accent">digital</span> solutions for
                 Businesses & Customers.

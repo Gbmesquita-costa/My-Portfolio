@@ -36,7 +36,7 @@ const Work = async (): Promise<JSX.Element> => {
 
   return (
     <div className="flex bg-primary/30 min-h-screen 
-      w-full flex-col items-center justify-center "
+      w-full flex-col items-center justify-center"
     >
       <Circles />
       <div className="container mx-auto">
@@ -44,9 +44,18 @@ const Work = async (): Promise<JSX.Element> => {
           justify-center"
         >
           <WorkDescription />
-          <Projects
-            projects={projects}
-          />
+
+          {
+            !projects.length ? (
+              <h2 className="text-2xl -mt-6">
+                No projects found : (
+              </h2>
+            ) : (
+              <Projects
+                projects={projects}
+              />
+            )
+          }
         </div>
       </div>
       <Circles />

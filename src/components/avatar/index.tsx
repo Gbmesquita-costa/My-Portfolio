@@ -3,13 +3,14 @@ import avatarImage from "@/assets/avatar/avatar.png";
 
 export const Avatar = (): JSX.Element => {
   return (
-    <div className="hidden xl:flex xl:max-w-none">
+    <div className="hidden xl:flex 
+      xl:max-w-none w-[600px] h-[600px]"
+    >
         <Image
           src={avatarImage}
-          width={500}
-          height={500}
+          fill
           alt="avatar_image"
-          className="translate-z-0 w-full h-full"
+          className="object-cover"
         />
     </div>
   )
