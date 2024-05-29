@@ -38,7 +38,7 @@ export const TestimonialsDescription = ({ testemonials }: TestemonialsDescriptio
                 className="text-[35px] leading-tight md:text-[54px] 
                 md:leading-[1.3] font-semibold mb-8 xl:mb-0"
             >
-                What my clients <span className="text-accent">say...</span>
+                What they say about <span className="text-accent">me...</span>
             </motion.h2>
             <motion.div
                 variants={fadeIn("up", 0.4)}

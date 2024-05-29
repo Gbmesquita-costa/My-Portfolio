@@ -20,7 +20,16 @@ interface ProjectsProps {
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "My Portfolio | Projects"
+  description: `
+    Explore a selection of my diverse projects, ranging from client and corporate work to personal endeavors. 
+    Each project showcases my expertise and dedication to delivering innovative solutions that meet the unique 
+    needs of each client. From web development and design to software solutions, dive into my portfolio to see 
+    how I can bring your digital ideas to life.
+  `,
+  robots: {
+    index: true,
+    follow: true
+  }
 }
 
 const Work = async (): Promise<JSX.Element> => {
@@ -48,7 +57,7 @@ const Work = async (): Promise<JSX.Element> => {
           {
             !projects.length ? (
               <h2 className="text-2xl -mt-6">
-                No projects found : (
+                No projects found 😢
               </h2>
             ) : (
               <Projects

@@ -32,7 +32,7 @@ export const NavBar = (): JSX.Element => {
             path: "/contact",
             icon: <HiEnvelope />
         },
-        { name: "cofee", path: "/coffee", icon: <SiBuymeacoffee /> }
+        { name: "coffee", path: "/coffee", icon: <SiBuymeacoffee /> }
     ]
 
     return (

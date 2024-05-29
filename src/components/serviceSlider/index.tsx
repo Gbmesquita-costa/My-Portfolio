@@ -27,13 +27,13 @@ export const ServiceSlider = (): JSX.Element => {
         {
             icon: <RxDesktop />,
             title: "Development",
-            description: "Custom solutions development to meet the specific needs of your project. I m here to turn your ideas into reality.",
+            description: "Custom solutions development to meet the specific needs of your project. I’m here to turn your ideas into reality.",
             link: "https://brainstation.io/career-guides/what-is-web-development"
         },
         {
             icon: <RxRocket />,
             title: "Deployment",
-            description: "I manage the entire process, ensuring your projects are ready to launch  quickly and effectively.",
+            description: "I manage the entire process, ensuring your projects are ready to launch quickly and effectively.",
             link: "https://umbraco.com/knowledge-base/deployment"
         },
         {
@@ -61,23 +61,23 @@ export const ServiceSlider = (): JSX.Element => {
                 clickable: true
             }}
             modules={[FreeMode, Pagination]}
-            className="h-[240px] sm:h-[340px]"
+            className="h-[240px] sm:h-[390px]"
         >
             {
                 serviceData.map(({ description, icon, title, link }, index) => (
                     <SwiperSlide key={index}>
                         <Link
                             href={link}
-                            className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex
-                            sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)]
-                            transition-all duration-300"
+                            className="bg-[rgba(65,47,123,0.15)] h-full rounded-lg px-6 py-8 flex
+                            sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer justify-around
+                            hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             <div className="text-4xl text-accent mb-4">
                                 {icon}
                             </div>
-                            <div className="mb-8">
+                            <div className="mb-12">
                                 <div className="mb-2 text-lg">
                                     {title}
                                 </div>

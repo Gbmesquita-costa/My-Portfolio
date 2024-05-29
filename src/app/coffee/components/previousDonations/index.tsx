@@ -21,19 +21,22 @@ export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.E
     }
 
     return (
-        <div className="flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0 ">
+        <div className="flex xl:w-[30vw] flex-col 
+            mb-4 xl:mb-0"
+        >
             <motion.h2
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
                 animate="show"
-                className="text-[35px] leading-tight md:text-[45px] md:leading-[1.3] 
-                mb-4 font-semibold"
+                className="text-[35px] leading-tight md:text-[45px] 
+                md:leading-[1.3] mb-4 font-semibold text-center lg:text-left"
             >
                 Previous <span className="text-accent">Donations</span>
             </motion.h2>
 
-            <div className="h-[380px] scrollbar scrollbar-w-[9px] scrollbar-thumb-rounded-3xl 
-            scrollbar-thumb-zinc-400 hover:scrollbar-thumb-zinc-500 overflow-y-auto overflow-x-hidden"
+            <div className="h-[380px] scrollbar scrollbar-w-[9px] 
+                scrollbar-thumb-rounded-3xl scrollbar-thumb-zinc-400 hover:scrollbar-thumb-zinc-500 
+                overflow-y-auto overflow-x-hidden lg:text-left"
             >
                 {
                     donations ? donations.map(({ amount, message, name }, index) => (

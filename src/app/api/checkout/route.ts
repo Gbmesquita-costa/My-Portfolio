@@ -7,6 +7,18 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     const { quantity, message, name } = await req.json()
 
     try {
+        if (quantity > 19) {
+            return NextResponse.json({ message: "Exceeded the maximum donations allowed" }, {
+                status: 400
+            })
+        }
+
+        if (quantity < 1) {
+            return NextResponse.json({ message: "Must have at least 1 donation of a coffee" }, {
+                status: 400
+            })
+        }
+
         const session = await stripe.checkout.sessions.create({
             metadata: {
                 name: name || "Anonymous",

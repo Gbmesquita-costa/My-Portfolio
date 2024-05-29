@@ -17,7 +17,11 @@ export const metadata: Metadata = {
     default: "My Portfolio | Gabriel Mesquita da Costa",
     template: "My Portfolio | %s"
   },
-  description: "My Portfolio | Gabriel Mesquita da Costa",
+  description: `
+    Gabriel Mesquita da Costa - Full Stack Developer specialized in Website and Software development. With a 
+    passion for creating innovative digital solutions that enhance user experience and drive business success, 
+    I collaborate with companies to turn digital ideas into reality. Explore my projects and let's work together!
+  `,
   twitter: {
     card: "summary_large_image"
   },
@@ -33,10 +37,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en-US" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <TransitionProvider>
-          <main className="relative w-full h-screen xl:overflow-hidden text-white overflow-y-auto">
+          <main className="relative w-full h-screen 
+            xl:overflow-hidden text-white overflow-y-auto"
+          >
             <TopLeftImage />
             <Header />
             {children}

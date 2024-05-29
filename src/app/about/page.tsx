@@ -8,7 +8,14 @@ import { MotionAvatar } from "./components/motionAvatar";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "My Portfolio About me"
+  description: `
+    With 4 years of freelancing experience, I've contributed to diverse digital products, leveraging my expertise in 
+    front-end and back-end technologies. Explore my skills, credentials, and passions to get to know me better!
+  `,
+  robots: {
+    index: true,
+    follow: true
+  }
 }
 
 const About = (): JSX.Element => {
