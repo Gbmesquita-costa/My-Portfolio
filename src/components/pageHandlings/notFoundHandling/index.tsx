@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 const LazyLoadedAnimation = dynamic(
@@ -12,7 +13,7 @@ const LazyLoadedAnimation = dynamic(
 
 export const NotFoundHandling = () => {
     return (
-        <>
+        <Suspense fallback={<div>Loading Anaimation...</div>}>
             <h1 className="text-4xl md:text-5xl font-semibold text-center">
                 Page Not Found  | 404
             </h1>
@@ -24,6 +25,6 @@ export const NotFoundHandling = () => {
             <div className="max-w-[470px]">
                 <LazyLoadedAnimation />
             </div>
-        </>
+        </Suspense>
     )
 }
