@@ -1,1 +1,1 @@
-export const DONATION_IN_CENTS = parseInt(process.env.NEXT_PUBLIC_DONATION_IN_CENTS || "500", 10)
+export const DONATION_IN_CENTS = parseInt(process.env.NEXT_PUBLIC_DONATION_IN_CENTS || "100", 10)
