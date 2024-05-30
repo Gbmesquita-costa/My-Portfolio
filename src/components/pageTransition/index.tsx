@@ -3,42 +3,48 @@ import { motion } from "framer-motion";
 export const PageTransition = (): JSX.Element => {
   const transitionVariants = {
     initial: {
-      x: "100%",
-      width: "100%"
+      scaleX: 1,
+      transformOrigin: "left"
     },
     animate: {
-      x: "0%",
-      width: "0%"
+      scaleX: 0,
+      transformOrigin: "left"
     },
     exit: {
-      x: ["0%", "100%"],
-      width: ["0%", "100%"]
+      transformOrigin: "left"
     }
   }
 
+  const transition = [
+    { delay: 0.2, color: "#2e2257", opacity: "30" },
+    { delay: 0.4, color: "#3b2d71", opacity: "20" },
+    { delay: 0.6, color: "#4b3792", opacity: "10" }
+  ]
+
   return (
-    <div>
-      <motion.div className="fixed top-0 bottom-0 right-full w-screen h-screen z-30 
-      bg-[#2e2257]"
-        variants={transitionVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ delay: 0.2, duration: 0.6, ease: "easeInOut" }}
-      />
-      <motion.div className="fixed top-0 bottom-0 right-full w-screen h-screen z-20 
-      bg-[#3b2d71]"
-        variants={transitionVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ delay: 0.4, duration: 0.6, ease: "easeInOut" }}
-      />
-      <motion.div className="fixed top-0 bottom-0 right-full w-screen h-screen z-10 
-      bg-[#4b3792]"
-        variants={transitionVariants}
-        initial="initial"
-        animate="animate"
-        transition={{ delay: 0.6, duration: 0.6, ease: "easeInOut" }}
-      />
-    </div>
+    <>
+      {
+        transition.map(({ delay, color, opacity }) => (
+          <motion.div
+            key={color}
+            className="fixed top-0 bottom-0 right-0 left-0"
+            style={{
+              backgroundColor: color,
+              zIndex: opacity,
+              transformOrigin: "left" // Ensures that the origin of the transformation is the right edge
+            }}
+            variants={transitionVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{
+              delay,
+              duration: 0.6,
+              ease: "easeInOut"
+            }}
+          />
+        ))
+      }
+    </>
   )
 }

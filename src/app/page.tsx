@@ -66,7 +66,8 @@ const Home = (): JSX.Element => {
             ease: "easeInOut"
           }}
           className="bg-none xl:bg-home xl:bg-cover xl:bg-right xl:bg-no-repeat
-          w-full h-full absolute mix-blend-color-dodge translate-z-0"/>
+          w-full h-full absolute mix-blend-color-dodge translate-z-0"
+        />
 
         <div className="w-full h-full">
           <ParticlesContainer />

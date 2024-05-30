@@ -29,7 +29,6 @@ export function TransitionProvider({ children }: TransitionProviderProps): JSX.E
                     {children}
                 </motion.div>
             </AnimatePresence>
-
             <Analytics />
         </>
     )

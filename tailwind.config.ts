@@ -23,8 +23,8 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        home: "url('/bg-home.png')",
-        circleStar: "url('/circle-star.svg')",
+        home: "url('/bg-home.webp')",
+        circleStar: "url('/circle-star.webp')",
       },
       colors: {
         border: "hsl(var(--border))",
