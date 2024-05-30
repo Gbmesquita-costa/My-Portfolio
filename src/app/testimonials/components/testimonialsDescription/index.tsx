@@ -70,6 +70,8 @@ export const TestimonialsDescription = ({ testemonials }: TestemonialsDescriptio
                                                     height={100}
                                                     alt="testimonial_image"
                                                     className="rounded-full"
+                                                    loading="lazy"
+                                                    quality={80}
                                                 />
                                             </div>
                                             <div className="text-lg">
@@ -88,7 +90,7 @@ export const TestimonialsDescription = ({ testemonials }: TestemonialsDescriptio
                                         <div className="mb-4">
                                             <FaQuoteLeft
                                                 className="text-4xl xl:text-6xl text-white/20 mx-auto
-                                        md:mx-0"
+                                                md:mx-0"
                                             />
                                         </div>
                                         <div className="xl:text-lg text-center md:text-left">

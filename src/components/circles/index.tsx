@@ -12,6 +12,7 @@ export const Circles = (): JSX.Element => {
                 alt="circles_image"
                 className="w-full h-full"
                 loading="lazy"
+                quality={80}
             /> 
         </div>
     )

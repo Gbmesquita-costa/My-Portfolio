@@ -106,6 +106,8 @@ export const Projects = ({ projects }: ProjectsProps): JSX.Element => {
                                                         width={900}
                                                         height={200}
                                                         alt="work_image"
+                                                        loading="lazy"
+                                                        quality={85}
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-l from-transparent 
                                                         via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 
@@ -190,6 +192,8 @@ export const Projects = ({ projects }: ProjectsProps): JSX.Element => {
                                                         width={250}
                                                         alt="project"
                                                         className="rounded-sm w-full"
+                                                        loading="lazy"
+                                                        quality={80}
                                                     />
                                                 </div>
                                             </DialogContent>

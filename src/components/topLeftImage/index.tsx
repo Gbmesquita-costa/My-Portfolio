@@ -10,6 +10,8 @@ export const TopLeftImage = (): JSX.Element => {
         width={400}
         height={400}
         alt="topLeftImage"
+        loading="lazy"
+        quality={80}
       />
     </div>
   )
