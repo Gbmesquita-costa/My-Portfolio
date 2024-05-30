@@ -1,0 +1,1 @@
+export const http = process.env.HTTP_REQUEST as string //http://localhost:3000

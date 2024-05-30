@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { http } from "@/services/httpRequest";
 
 import { BuyCoffee } from "./components/buyCoffee";
 import { PreviousDonations } from "./components/previousDonations";
@@ -27,7 +28,9 @@ export const metadata: Metadata = {
 }
 
 const Coffee = async (): Promise<JSX.Element> => {
-  const response = await fetch("http://localhost:3000/api/donations", {
+  const request = `${http}/api/donations`
+
+  const response = await fetch(request, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"

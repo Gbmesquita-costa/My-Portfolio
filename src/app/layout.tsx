@@ -7,12 +7,13 @@ import { NavBar } from "@/components/navBar";
 import { TopLeftImage } from "@/components/topLeftImage";
 import { TransitionProvider } from "@/providers/transitionProvider";
 
+import { http } from "@/services/httpRequest";
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(http),
   title: {
     default: "My Portfolio | Gabriel Mesquita da Costa",
     template: "My Portfolio | %s"

@@ -4,6 +4,7 @@ import { Circles } from "@/components/circles";
 import { WorkDescription } from "./components/workDescription";
 
 import { Projects } from "./components/projects";
+import { http } from "@/services/httpRequest";
 
 interface ProjectDetails {
   name: string,
@@ -33,7 +34,9 @@ export const metadata: Metadata = {
 }
 
 const Work = async (): Promise<JSX.Element> => {
-  const response = await fetch("http://localhost:3000/api/projects", {
+  const request = `${http}/api/projects`
+
+  const response = await fetch(request, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"

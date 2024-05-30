@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+
+import { http } from "@/services/httpRequest";
 import { TestimonialsDescription } from "./components/testimonialsDescription";
 
 interface TestemonailsDetails {
@@ -27,7 +29,9 @@ export const metadata: Metadata = {
 }
 
 const Testimonials = async (): Promise<JSX.Element> => {
-  const response = await fetch("http://localhost:3000/api/testemonials", {
+  const request = `${http}/api/testemonials`
+
+  const response = await fetch(request, {
     method: "GET",
     headers: {
       "Content-Type": "application/json"
