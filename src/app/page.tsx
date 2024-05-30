@@ -8,6 +8,16 @@ import { Avatar } from "@/components/avatar";
 import { ParticlesContainer } from "@/components/particles";
 import { fadeIn } from "@/components/variants";
 
+import dynamic from "next/dynamic";
+
+const LazyLoadedBackground = dynamic(
+  () => import("@/components/homeBackground").then((response) => {
+    return response.HomeBackground
+  }), {
+  loading: () =>
+    <div>Loading...</div>
+})
+
 const Home = (): JSX.Element => {
   return (
     <div className="flex bg-primary/30 min-h-screen 
@@ -57,17 +67,7 @@ const Home = (): JSX.Element => {
       </div>
       <div className="w-[1200px] h-full absolute 
       right-0 bottom-0 overflow-hidden">
-        <motion.div
-          variants={fadeIn("up", 0.5)}
-          initial="hidden"
-          animate="show"
-          transition={{
-            duration: 1,
-            ease: "easeInOut"
-          }}
-          className="bg-none xl:bg-home xl:bg-cover xl:bg-right xl:bg-no-repeat
-          w-full h-full absolute mix-blend-color-dodge translate-z-0"
-        />
+        <LazyLoadedBackground />
 
         <div className="w-full h-full">
           <ParticlesContainer />
