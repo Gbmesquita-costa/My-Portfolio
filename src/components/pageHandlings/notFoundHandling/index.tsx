@@ -1,7 +1,14 @@
 "use client"
 
-import Lottie from "react-lottie";
-import Animation from "@/assets/lottie/404.json";
+import dynamic from "next/dynamic";
+
+const LazyLoadedAnimation = dynamic(
+    () => import("./lottie").then((response) => {
+        return response.Animation
+    }), {
+    loading: () => <div>Loading Animation...</div>,
+    ssr: false
+})
 
 export const NotFoundHandling = () => {
     return (
@@ -15,15 +22,7 @@ export const NotFoundHandling = () => {
             </p>
 
             <div className="max-w-[470px]">
-                <Lottie
-                    style={{ cursor: "auto" }}
-                    isClickToPauseDisabled={true}
-                    options={{
-                        autoplay: true,
-                        loop: true,
-                        animationData: Animation
-                    }}
-                />
+                <LazyLoadedAnimation />
             </div>
         </>
     )
