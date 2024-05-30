@@ -7,7 +7,9 @@ import { NavBar } from "@/components/navBar";
 import { TopLeftImage } from "@/components/topLeftImage";
 import { TransitionProvider } from "@/providers/transitionProvider";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { http } from "@/services/httpRequest";
+
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -50,6 +52,7 @@ export default function RootLayout({
             <NavBar />
           </main>
         </TransitionProvider>
+        <SpeedInsights />
       </body>
     </html>
   )

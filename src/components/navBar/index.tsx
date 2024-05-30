@@ -52,6 +52,7 @@ export const NavBar = (): JSX.Element => {
                             relative flex items-center group hover:text-accent transition-all duration-200`}
                             href={path}
                             key={index}
+                            aria-label={name}
                         >
                             <div className="absolute pr-11 right-0 hidden xl:group-hover:flex transition-all">
                                 <div className="bg-white relative flex text-primary items-center 
