@@ -52,7 +52,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         }
     })
 
-    await revalidate("donations")
+    revalidate("donations")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200
