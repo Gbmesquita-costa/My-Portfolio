@@ -86,7 +86,7 @@ export const Projects = ({ projects }: ProjectsProps): JSX.Element => {
                 >
                     {projectChunks.map((chunk, index) => (
                         <SwiperSlide key={index}>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                                 {chunk.map(({ name, thumbnail, description, gifimage_url, deployUrl, githubRepo }) => (
                                     <div
                                         key={name}

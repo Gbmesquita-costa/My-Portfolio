@@ -40,10 +40,10 @@ export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.E
                 {
                     donations ? donations.map(({ amount, message, name, currency }, index) => (
                         <motion.div
+                            key={index}
                             variants={fadeIn("up", 0.2)}
                             initial="hidden"
                             animate="show"
-                            key={index}
                             className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg p-4 group 
                             cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 
                             mb-2 mt-4 mr-3"
