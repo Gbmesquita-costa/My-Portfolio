@@ -4,7 +4,12 @@ import { stripe } from "@/services/stripe";
 import { DONATION_IN_CENTS } from "@/../config";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-    const { quantity, message, name } = await req.json()
+    const { 
+        quantity, 
+        message, 
+        currency,
+        name 
+    } = await req.json()
 
     try {
         if (quantity > 19) {
@@ -29,7 +34,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             line_items: [
                 {
                     price_data: {
-                        currency: "USD",
+                        currency,
                         product_data: {
                             name: "Donation"
                         },
