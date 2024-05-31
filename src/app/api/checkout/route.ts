@@ -29,7 +29,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             line_items: [
                 {
                     price_data: {
-                        currency: "usd",
+                        currency: "USD",
                         product_data: {
                             name: "Donation"
                         },

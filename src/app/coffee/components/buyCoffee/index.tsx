@@ -163,7 +163,7 @@ export const BuyCoffee = (): JSX.Element => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                quantity,
+                quantity: parseInt(quantity, 10),
                 name: name,
                 message: message
             })
