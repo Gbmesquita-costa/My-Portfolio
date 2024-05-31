@@ -48,7 +48,7 @@ const Work = async (): Promise<JSX.Element> => {
 
   return (
     <div className="flex bg-primary/30 min-h-screen 
-      w-full flex-col py-32 xl:py-32"
+      w-full flex-col py-36 xl:py-32"
     >
       <Circles />
       <div className="container mx-auto">

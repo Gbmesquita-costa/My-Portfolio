@@ -66,7 +66,7 @@ export const BuyCoffee = (): JSX.Element => {
             variants={fadeIn("down", 0.6)}
             initial="hidden"
             animate="show"
-            className="w-full xl:max-w-[45%] mb-20 xl:mb-0 
+            className="w-full xl:max-w-[45%] mb-12 
             text-center xl:text-left"
         >
             <form

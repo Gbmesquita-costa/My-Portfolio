@@ -22,9 +22,7 @@ export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.E
     }
 
     return (
-        <div className="flex xl:w-[30vw] flex-col 
-            mb-4 xl:mb-0"
-        >
+        <div className="flex xl:w-[30vw] flex-col">
             <motion.h2
                 variants={fadeIn("up", 0.2)}
                 initial="hidden"
