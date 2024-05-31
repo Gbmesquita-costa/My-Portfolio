@@ -52,7 +52,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         }
     })
 
-    revalidatePathName(`${req.headers.get("origin")}/coffee`)
+    revalidatePathName("/")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200
