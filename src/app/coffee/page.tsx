@@ -36,7 +36,10 @@ const Coffee = async (): Promise<JSX.Element> => {
     headers: {
       "Content-Type": "application/json"
     },
-    cache: "no-store"
+    cache: "no-store",
+    next: {
+      tags: ["donations"]
+    }
   })
 
   const { donations, message } = await response.json() as DonationsProps

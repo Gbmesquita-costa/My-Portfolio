@@ -4,6 +4,7 @@ import Stripe from "stripe";
 import { stripe } from "@/services/stripe";
 
 import prisma from "@/services/database";
+import { revalidate } from "@/actions/revalidateTag";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
     const signature = req.headers.get("stripe-signature")
@@ -50,6 +51,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
             currency: metadata.currency
         }
     })
+
+    await revalidate("donations")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200
