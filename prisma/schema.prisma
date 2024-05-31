@@ -8,10 +8,11 @@ datasource db {
 }
 
 model Donations {
-  id      String @id @default(uuid())
-  name    String @db.VarChar(17)
-  message String @db.VarChar(100)
-  amount  Int
+  id       String @id @default(uuid())
+  name     String @db.VarChar(17)
+  message  String @db.VarChar(100)
+  amount   Int
+  currency String
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt()

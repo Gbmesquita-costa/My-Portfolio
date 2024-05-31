@@ -48,12 +48,11 @@ const Work = async (): Promise<JSX.Element> => {
 
   return (
     <div className="flex bg-primary/30 min-h-screen 
-      w-full flex-col items-center justify-center"
+      w-full flex-col py-32 xl:py-32"
     >
       <Circles />
       <div className="container mx-auto">
-        <div className="flex flex-col items-center 
-          justify-center"
+        <div className="flex flex-col items-center"
         >
           <WorkDescription />
 

@@ -8,15 +8,16 @@ interface DonationsProps {
         name: string;
         message: string;
         amount: number;
+        currency: string;
     }]
     message: string;
 }
 
 export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.Element => {
-    const priceFormat = (amount: number): string => {
-        return new Intl.NumberFormat("en-US", {
+    const priceFormat = (amount: number, currency: string): string => {
+        return new Intl.NumberFormat("pt-BR", {
             style: "currency",
-            currency: "USD",
+            currency: currency || "usd"
         }).format(amount)
     }
 
@@ -39,7 +40,7 @@ export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.E
                 overflow-y-auto overflow-x-hidden lg:text-left"
             >
                 {
-                    donations ? donations.map(({ amount, message, name }, index) => (
+                    donations ? donations.map(({ amount, message, name, currency }, index) => (
                         <motion.div
                             variants={fadeIn("up", 0.2)}
                             initial="hidden"
@@ -49,7 +50,7 @@ export const PreviousDonations = ({ donations, message }: DonationsProps): JSX.E
                             cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 
                             mb-2 mt-4 mr-3"
                         >
-                            {name} donated | <strong>{priceFormat(amount)}</strong> <br />
+                            {name} donated | <strong>{priceFormat(amount, currency)}</strong> <br />
 
                             <p className="mt-2 text-zinc-300">
                                 {message}

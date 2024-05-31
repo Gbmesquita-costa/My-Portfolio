@@ -6,7 +6,7 @@ import { stripe } from "@/services/stripe";
 import prisma from "@/services/database"
 import { revalidate } from "@/actions/revalidateTag";
 
-export async function POST(req: NextRequest): Promise<NextResponse>{
+export async function POST(req: NextRequest): Promise<NextResponse> {
     const signature = req.headers.get("stripe-signature")
 
     if (!signature) {
@@ -43,11 +43,12 @@ export async function POST(req: NextRequest): Promise<NextResponse>{
         amount_total: number
     }).amount_total / 100
 
-    prisma.donations.create({
+    await prisma.donations.create({
         data: {
             message: metadata.message,
             name: metadata.name,
-            amount: amount
+            amount: amount,
+            currency: metadata.currency
         }
     })
 

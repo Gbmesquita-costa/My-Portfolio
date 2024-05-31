@@ -27,7 +27,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         const session = await stripe.checkout.sessions.create({
             metadata: {
                 name: name || "Anonymous",
-                message
+                message,
+                currency
             },
             payment_method_types: ["card"],
             mode: "payment",

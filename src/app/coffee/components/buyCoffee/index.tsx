@@ -67,7 +67,7 @@ export const BuyCoffee = (): JSX.Element => {
             initial="hidden"
             animate="show"
             className="w-full xl:max-w-[45%] mb-20 xl:mb-0 
-            text-center xl:text-left mt-5"
+            text-center xl:text-left"
         >
             <form
                 ref={ref}
