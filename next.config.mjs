@@ -9,37 +9,6 @@ const withBundleAnalyzer = analyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async headers() {
-        return [
-            {
-                source: "/api/donations",
-                headers: [
-                    {
-                        key: "Cache-Control",
-                        value: "no-store, max-age=0"
-                    }
-                ]
-            },
-            {
-                source: "/api/projects",
-                headers: [
-                    {
-                        key: "Cache-Control",
-                        value: "no-store, max-age=0"
-                    }
-                ]
-            },
-            {
-                source: "/api/testemonials",
-                headers: [
-                    {
-                        key: "Cache-Control",
-                        value: "no-store, max-age=0"
-                    }
-                ]
-            }
-        ]
-    },
     images: {
         remotePatterns: [
             {
