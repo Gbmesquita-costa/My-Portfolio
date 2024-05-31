@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePathName } from "@/actions/revalidate";
+import { revalidatePathName, revalidateTagName } from "@/actions/revalidate";
 
 import Stripe from "stripe";
 import { stripe } from "@/services/stripe";
@@ -53,6 +53,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     })
 
     revalidatePathName("/")
+    revalidateTagName("donations")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200

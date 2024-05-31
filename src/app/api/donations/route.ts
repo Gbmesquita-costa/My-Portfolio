@@ -13,8 +13,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
         },
         orderBy: {
             updated_at: "desc"
-        },
-        take: 4
+        }
     })
 
     if (!getDonations) {
