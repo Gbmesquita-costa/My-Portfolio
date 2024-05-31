@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidatePathName, revalidateTagName } from "@/actions/revalidate";
+import { revalidatePathName } from "@/actions/revalidate";
 
 import Stripe from "stripe";
 import { stripe } from "@/services/stripe";
 
 import prisma from "@/services/database";
+
+export const revalidate = 0
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
     const signature = req.headers.get("stripe-signature")
@@ -52,8 +54,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         }
     })
 
-    revalidatePathName("/")
-    revalidateTagName("donations")
+    await revalidatePathName("/")
 
     return NextResponse.json({ message: "Success" }, {
         status: 200
